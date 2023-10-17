@@ -46,6 +46,13 @@ class BookController {
       console.log(error);
     }
   }
+
+  async pageBook(req, res) {
+    const book = await bookService.getBook();
+    res.render("book", {
+      book
+    })
+  }
 }
 
 module.exports = BookController;
